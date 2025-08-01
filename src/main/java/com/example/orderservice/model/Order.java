@@ -32,5 +32,4 @@ public class Order {
     // List of ordered items
     private List<OrderLineItem> items;
 
-    // TODO: Add constructors, getters, setters (or use Lombok)
 }
