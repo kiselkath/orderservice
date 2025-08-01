@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  order-service:
+    build: .
+    container_name: order-service
+    ports:
+      - "8588:8588"
+    networks:
+      - micro-net
+    environment:
+      - SPRING_DATA_MONGODB_URI=${MONGO_URI}
+      - SERVER_PORT=8588
+      #  depends_on:
+      #   - inventory-service  # можно удалить или закомментировать, если его пока нет
+
+networks:
+  micro-net:
+    external: true  # убедись, что сеть существует или создай вручную
